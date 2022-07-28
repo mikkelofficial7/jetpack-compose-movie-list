@@ -1,2 +1,2 @@
 # jetpack-compose-movie-list
- List of movie using jetpack compose
+ List of movie using Jetpack Compose
