@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.android.mobile.simplejetpackcompose.model.Movie
 import com.android.mobile.simplejetpackcompose.model.MovieNavConverter
 import com.android.mobile.simplejetpackcompose.nav.Destinations.Detail
 import com.android.mobile.simplejetpackcompose.nav.Destinations.Main
@@ -29,9 +30,12 @@ fun navComposeApp() {
                     type = MovieNavConverter()
                 })
             ) {
+                val movie = it.arguments?.getParcelable<Movie>("movieData")
+
                 detailView(navController,
-                    movieData = it.arguments?.getParcelable("movieData"),
-                    actionBack = actions.navigateBack)
+                    movieData = movie,
+                    actionBack = actions.navigateBackWithState("lastMovieClick", movie)
+                )
             }
         }
     }

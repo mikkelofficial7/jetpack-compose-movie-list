@@ -7,6 +7,16 @@ object Destinations {
     const val Detail = "detail"
 }
 
-class Action(navController: NavHostController) {
+class Action(private val navController: NavHostController) {
     val navigateBack: () -> Unit = { navController.popBackStack() }
+
+    fun <T>navigateBackWithState(keyName: String, value: T) : () -> Unit {
+        return {
+            navController.previousBackStackEntry
+                ?.savedStateHandle
+                ?.set(key = keyName, value = value)
+
+            navController.popBackStack()
+        }
+    }
 }
