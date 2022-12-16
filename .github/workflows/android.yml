@@ -40,6 +40,8 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk 
           
   Gradle:
+    name: Generate APK Release
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - name: checkout code
