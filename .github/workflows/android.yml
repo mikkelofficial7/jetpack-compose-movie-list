@@ -10,6 +10,12 @@ on:
       - main
     tags:
       - '*'
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Command Trigger'
+        required: true
+        default: 'buildapk'
   repository_dispatch:
     types: buildapk
 
