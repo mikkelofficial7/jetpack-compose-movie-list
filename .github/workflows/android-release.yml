@@ -2,7 +2,7 @@ name: Build & Publish Release APK
 
 on:
   push:
-    branch:
+    branches:
       - 'main'
     tags:
       - '*'
