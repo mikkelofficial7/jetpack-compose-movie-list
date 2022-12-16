@@ -10,6 +10,8 @@ on:
       - main
     tags:
       - '*'
+  repository_dispatch:
+    types: [build_apk]
 
 jobs:
   test:
