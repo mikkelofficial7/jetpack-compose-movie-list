@@ -57,8 +57,3 @@ jobs:
       with:
         name: apk
         path: app/build/outputs/apk/release/app-release.apk
-    - name: Releasing using Hub
-      uses: mikkelofficial7/action-release-releaseapk@master
-      env:
-       GITHUB_TOKEN: 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
-       APP_FOLDER: app
