@@ -1,4 +1,4 @@
-name: Android CI Workflow
+name: Android CI Workflow Release
 
 env:
   main_project_module: app
