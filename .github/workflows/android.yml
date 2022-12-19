@@ -58,7 +58,13 @@ jobs:
           path: ${{ env.main_project_module }}/build/outputs/apk/debug/
       - name: Upload APK Release - ${{ env.repository_name }}
         uses: actions/upload-artifact@v2
+        env:
+          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
         with:
+          fileName: 'keystore/your_signing_keystore.jks'
+          encodedString: ${{ secrets.KEYSTORE }}
           name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) release generated
           path: ${{ env.main_project_module }}/build/outputs/apk/release/
       - name: Upload AAB (App Bundle) Release - ${{ env.repository_name }}
