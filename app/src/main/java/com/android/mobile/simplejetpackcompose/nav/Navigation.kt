@@ -20,3 +20,6 @@ class Action(private val navController: NavHostController) {
         }
     }
 }
+
+// Pop back stack with passing argument refer to this:
+// https://stackoverflow.com/questions/70609796/pass-data-to-previous-composable-in-android-compose
